@@ -21,6 +21,7 @@ const Home = () => {
                 repositories.map((repository) => (
                     <Card
                         id={repository.id}
+                        stars={repository.stargazers_count}
                         name={repository.owner.name}
                         title={repository.name}
                         avatar={repository.owner.avatar_url}

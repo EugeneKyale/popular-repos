@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import styles from "./Card.module.scss";
 
-const Home = ({ id, name, avatar, title }) => {
+const Card = ({ id, stars, name, avatar, title }) => {
     return (
         <div
             key={id}
@@ -10,12 +11,17 @@ const Home = ({ id, name, avatar, title }) => {
         >
             <img src={avatar} alt={name} />
             <div className={styles.card__details}>
-                <h3>
-                    {title}
-                </h3>
+                <Link to={`repository/${id}`}>
+                    <h3>
+                        {title}
+                    </h3>
+                </Link>
+                <p>
+                    {stars}
+                </p>
             </div>
         </div>
     );
 };
 
-export default Home;
+export default Card;
