@@ -20,10 +20,14 @@ const Single = (props) => {
     return (
         <div className={styles.single}>
             <Repository
+                id={details.id}
                 stars={details.stargazers_count}
-                name={details.owner?.name}
                 title={details.name}
+                description={details.description}
+                fullname={details.full_name}
                 avatar={details.owner?.avatar_url}
+                watchers={details.watchers}
+                forks={details.forks}
             />
         </div>
     );

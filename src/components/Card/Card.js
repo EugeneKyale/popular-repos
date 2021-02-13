@@ -14,7 +14,7 @@ const Card = ({ id, stars, avatar, title, fullname, description }) => {
             <div className={styles.card__bio}>
                 <img src={avatar} alt={fullname} />
                 <Link to={`repository/${id}`}>
-                    {fullname}/{title}
+                    {fullname} - {title}
                 </Link>
             </div>
             <div className={styles.card__details}>
