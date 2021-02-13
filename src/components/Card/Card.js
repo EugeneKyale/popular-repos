@@ -1,24 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import star from "../../assets/icons/star.svg";
+
 import styles from "./Card.module.scss";
 
-const Card = ({ id, stars, name, avatar, title }) => {
+const Card = ({ id, stars, avatar, title, fullname, description }) => {
     return (
         <div
             key={id}
             className={styles.card}
         >
-            <img src={avatar} alt={name} />
-            <div className={styles.card__details}>
+            <div className={styles.card__bio}>
+                <img src={avatar} alt={fullname} />
                 <Link to={`repository/${id}`}>
-                    <h3>
-                        {title}
-                    </h3>
+                    {fullname}/{title}
                 </Link>
+            </div>
+            <div className={styles.card__details}>
                 <p>
-                    {stars}
+                    {description}
                 </p>
+                <h6>
+                    <img alt="stars" src={star} /> {stars}
+                </h6>
             </div>
         </div>
     );

@@ -22,8 +22,9 @@ const Home = () => {
                     <Card
                         id={repository.id}
                         stars={repository.stargazers_count}
-                        name={repository.owner.name}
                         title={repository.name}
+                        description={repository.description}
+                        fullname={repository.full_name}
                         avatar={repository.owner.avatar_url}
                     />
                 ))
