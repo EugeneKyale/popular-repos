@@ -9,7 +9,7 @@ const Home = () => {
     const [repositories, setRepositories] = useState([]);
 
     useEffect(() => {
-        axiosInstance.get(`search/repositories?q=stars&direction=desc&per_page=10`)
+        axiosInstance.get(`search/repositories?q=stars:>0&sort=stars&order=desc&per_page=10`)
             .then(res => {
                 setRepositories(res.data.items);
             });
